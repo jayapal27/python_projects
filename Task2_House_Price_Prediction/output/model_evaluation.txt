@@ -1,0 +1,3 @@
+Linear Regression Model Evaluation
+Mean Absolute Error (MAE): 243241.97758826384
+R2 Score: -0.006717808430749761
