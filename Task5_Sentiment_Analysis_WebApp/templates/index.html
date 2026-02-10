@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="app-container fade-in">
+        <h1>Sentiment Analysis</h1>
+        <p class="subtitle">
+            AI-powered sentiment detection using Natural Language Processing
+        </p>
+
+        <form method="POST" class="analysis-form">
+            <textarea name="text" placeholder="Enter your text here..." required>{{ text }}</textarea>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if sentiment %}
+        <div class="result-box slide-up">
+            <h2>Analysis Result</h2>
+
+            <p><strong>Sentiment:</strong>
+                <span class="{{ sentiment|lower }}">{{ sentiment }}</span>
+            </p>
+            <p><strong>Polarity:</strong> {{ polarity }}</p>
+            <p><strong>Subjectivity:</strong> {{ subjectivity }}</p>
+        </div>
+        {% endif %}
+
+        <footer>
+            <p>QSkill Python Development Internship</p>
+        </footer>
+    </div>
+
+</body>
+</html>
