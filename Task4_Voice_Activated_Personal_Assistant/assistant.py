@@ -43,7 +43,7 @@ def listen():
 # WEATHER (OpenWeather)
 # -------------------------------
 def get_weather():
-    API_KEY = "1be044423089c973406c0ad43c4db225"  # <-- REPLACE API KEY
+    API_KEY = "ENTER YOUR API KEY"  # <-- REPLACE API KEY
     CITY = "Madurai"
 
     url = (
@@ -53,7 +53,7 @@ def get_weather():
     response = requests.get(url, timeout=10)
     data = response.json()
 
-    print("Weather API response:", data)  # DEBUG
+    print("Weather API response:", data)  
 
     if "main" in data:
         temp = data["main"]["temp"]
@@ -67,7 +67,7 @@ def get_weather():
 # NEWS (NewsAPI - everything endpoint for free keys)
 # -------------------------------
 def get_news():
-    API_KEY = "0a198a03264c49eb898114ad133fa3bc"  # <-- REPLACE API KEY
+    API_KEY = "ENTER YOUR API KEY"  # <-- REPLACE API KEY
     url = (
         f"https://newsapi.org/v2/everything"
         f"?q=india&language=en&sortBy=publishedAt&apiKey={API_KEY}"
@@ -132,3 +132,4 @@ def start_assistant():
 
 if __name__ == "__main__":
     start_assistant()
+
