@@ -24,10 +24,10 @@ def speech_to_text(audio_path):
 
 
 # -------------------------------
-# STEP 2: Text to Image (Stability AI)
+# STEP 2: Text to Image (platform.stability.ai)
 # -------------------------------
 def generate_image(prompt):
-    API_KEY = "sk-dbVrZGHgs9zxSn8uCDiRtKU2m2InONFlB8bsT8pMDLrle5uf"  #<<< relace with your Stability AI key
+    API_KEY = "YOUR_OPENWEATHER_API_KEY"  #<<< replace with your platform.stability.ai key
 
     url = (
         "https://api.stability.ai/v1/generation/"
@@ -77,3 +77,4 @@ prompt_text = speech_to_text(audio_file)
 
 if prompt_text:
     generate_image(prompt_text)
+
